@@ -13,15 +13,16 @@ class CityList extends Component {
 
   componentWillMount() {
     this.props.loadCities();
-    console.log(this.props.cities)
   }
 
   render() {
     return(
-      <div>City List
+      <div className="cities">City List
         {this.props.cities.map((city) => {
           return (
-            <City city={city} key={city.name} />
+            <li className="list-group-item" key={city.name}>
+              <City city={city} />
+            </li>
           )}
         )}
       </div>

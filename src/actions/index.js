@@ -6,3 +6,10 @@ export function loadCities() {
     payload: cities
   }
 };
+
+export function changeActiveCity(city) {
+  return {
+    type: 'CHANGE_ACTIVE_CITY',
+    payload: city
+  }
+};

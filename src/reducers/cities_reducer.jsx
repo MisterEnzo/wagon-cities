@@ -10,4 +10,17 @@ const citiesReducer = (state, action) => {
   }
 }
 
-export default citiesReducer;
+const activeCityReducer = (state, action) => {
+  if (state === undefined) {
+    return {};
+  }
+
+  switch(action.type){
+    case 'CHANGE_ACTIVE_CITY':
+      return action.payload;
+    default:
+      return state;
+  }
+}
+
+export { citiesReducer, activeCityReducer };
