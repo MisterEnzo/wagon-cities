@@ -1,1 +1,8 @@
-// TODO: add and export your own actions
+import cities from '../api/cities';
+
+export function loadCities() {
+  return {
+    type: 'LOAD_CITIES',
+    payload: cities
+  }
+};
