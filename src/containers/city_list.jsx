@@ -17,12 +17,10 @@ class CityList extends Component {
 
   render() {
     return(
-      <div className="cities">City List
+      <div className="cities">Cities:
         {this.props.cities.map((city) => {
           return (
-            <li className="list-group-item" key={city.name}>
               <City city={city} />
-            </li>
           )}
         )}
       </div>
@@ -32,7 +30,7 @@ class CityList extends Component {
 
 function mapStateToProps(state){
   return {
-    cities: state.cities
+    cities: state.cities,
   }
 }
 

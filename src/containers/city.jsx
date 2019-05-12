@@ -6,12 +6,22 @@ import { changeActiveCity } from '../actions/index';
 
 class City extends Component{
   render() {
+    let classes = "list-group-item";
+    if (this.props.city === this.props.activeCity){
+      classes += " selected-city";
+    };
     return(
-      <div onClick={() => this.props.changeActiveCity(this.props.city)}>
+      <div className={classes} onClick={() => this.props.changeActiveCity(this.props.city)}>
         {this.props.city.name}
       </div>
     )
   };
+}
+
+function mapStateToProps(state){
+  return{
+    activeCity: state.activeCity
+  }
 }
 
 function mapDispatchToProps(dispatch){
@@ -21,4 +31,4 @@ function mapDispatchToProps(dispatch){
   )
 }
 
-export default connect(null, mapDispatchToProps)(City);
+export default connect(mapStateToProps, mapDispatchToProps)(City);
